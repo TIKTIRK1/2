@@ -89,17 +89,88 @@
             echo "среднее арифметическое: ", $a;
             echo "<br>";
         ?>
-         <?php
-            $x=10*mt_rand()/mt_getrandmax();
-            $y=10*mt_rand()/mt_getrandmax();
-            $z=10*mt_rand()/mt_getrandmax();
+        <?php
+            $x=50*mt_rand()/mt_getrandmax();
+            $y=50*mt_rand()/mt_getrandmax();
+            $z=50*mt_rand()/mt_getrandmax();
             $x=(int)$x;
             $y=(int)$y;
             $z=(int)$z;
-            $a=(pow(($x+1),4))-2*($z-pow((2*$x),2)+pow($y,2))+abs(sin($y));
-            echo "№4";
+            $a=($x+$y)/$z;
+            $b=($x+$z)/$y;
+            $a=($z+$y)/$x;
+            echo "№5";
             echo "<br>";
-            echo "среднее арифметическое: ", $a;
+            echo "Результаты: ",$a," ",$b," ",$c;
+            echo "<br>";
+        ?>
+        <?php
+            $x=50*mt_rand()/mt_getrandmax();
+            $x=(int)$x;
+            $a=$x%3;
+            $b=$x%5;
+            echo "№6";
+            echo "<br>";
+            echo "Деление на 3: ",$a;
+            echo "<br>";
+            echo "Деление на 5: ",$b;
+            echo "<br>";
+        ?>
+        <?php
+            $x=50*mt_rand()/mt_getrandmax();
+            $x=(int)$x;
+            $a=$x*0.3;
+            $b=$x*1.20;
+            echo "№7";
+            echo "<br>";
+            echo "30%: ",$a;
+            echo "<br>";
+            echo "120%: ",$b;
+            echo "<br>";
+        ?>
+        <?php
+            $x=50*mt_rand()/mt_getrandmax();
+            $y=50*mt_rand()/mt_getrandmax();
+            $x=(int)$x;
+            $y=(int)$y;
+            $a=$x*0.4;
+            $b=$y*0.84;
+            echo "№8";
+            echo "<br>";
+            echo "Сумма: ",$a+$b;
+            echo "<br>";
+        ?>
+        <?php
+            $x=100+50*mt_rand()/mt_getrandmax();
+            $x=(int)$x;
+            $a=$x/100;
+            $b=$x%100/10;
+            $c=$x%10;
+            echo "№9";
+            echo "<br>";
+            echo "Сумма: ",(int)$a+(int)$b+$c;
+            echo "<br>";
+        ?>
+        <?php
+            $x=100+50*mt_rand()/mt_getrandmax();
+            $x=(int)$x;
+            $a=$x%100/10;
+            $x=$x-(int)$a*10;
+            echo "№10";
+            echo "<br>";
+            echo "Результат: ",$x;
+            echo "<br>";
+        ?>
+        <?php
+            $x=100+50*mt_rand()/mt_getrandmax();
+            $x=(int)$x;
+            $a=$x/100;
+            $b=$x%100/10;
+            $c=$x%10;
+            $x=(int)$c*100+(int)$b*10+(int)$a;
+            echo "№11";
+            echo "<br>";
+            echo "Перевернутое число: ",$x;
             echo "<br>";
         ?>
     </body>
