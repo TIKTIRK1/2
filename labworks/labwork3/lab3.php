@@ -52,6 +52,77 @@
             echo "Начальное значение строки = $i";
             echo"<br>";
             echo "Результат инкремента ADz = " .++$i;
+            echo "<br>";
         ?>
+
+        <?PHP
+            $a=3;
+            echo "<br>";
+            echo "№1";
+            echo "<br>";
+            echo $a;    
+            echo "<br>";       
+        ?>
+
+        <?PHP
+        echo "<br>";
+        echo "№2";
+        $a=10;
+        $b=2;
+        $c=$a+$b;
+        $d=$a-$b;
+        $e=$a/$b;
+        $f=$a*$b;
+        echo "<br>";
+        echo "Результат сложения: ".$c;
+        echo "<br>";
+        echo "Результат разности: ".$d;
+        echo "<br>";
+        echo "Результат деления: ".$e;
+        echo "<br>";
+        echo "Результат произведения: ".$f;
+        echo "<br>";
+        ?>
+
+        <?PHP
+        echo "<br>";
+        echo "№3";
+        $c=15;
+        $d=2;
+        $result=$c+$d;
+        
+        echo "<br>";
+        echo "Переменная result=: ".$result;
+        echo "<br>";
+        ?>
+
+        <?PHP
+        echo "<br>";
+        echo "№4";
+        $a=10;
+        $b=2;
+        $c=5;
+        $result=$a+$b+$c;
+        
+        echo "<br>";
+        echo "Сумма: ".$result;
+        echo "<br>";
+        ?> 
+
+        <?PHP
+        echo "<br>";
+        echo "№5";
+        $a=17;
+        $b=10;
+        $c=0;
+        $c=$a-$b;
+        $d=7;
+        $result=$c+$d;
+        
+        echo "<br>";
+        echo "Переменная result= ".$result;
+        echo "<br>";
+        ?> 
+        
     </body> 
 </html>
