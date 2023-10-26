@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
-    <title>Стили</title>
-
-    <style type="text/css">
-        H1{
-            font-size: 120%;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            color: #FF0000;
-            text-align: left;
-        }
-    </style>
-
-    <style type="text/css">
-        H2{
-            font-size: 160%;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            color: #00FF00;
-            text-align: center;
-        }
-    </style>
-
-    <style type="text/css">
-        H3{
-            font-size: 200%;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            color: #0000FF;
-            text-align: right;
-        }
-    </style>
+    <meta charset="utf-8">
 </head>
 <body>
-    <?php 
-        echo "<H1>";
-        echo "Hello world!";
-        echo "</H1>"; 
-        
-        echo "<H2>";
-        echo "Hello world!";
-        echo "</H2>";
+    <?PHP //9
+            $j=0;
+            $s=0;
+            echo "№9<br>";
+            $a=(int)10*mt_rand()/mt_getrandmax();
+            for ($i=0; $i <=$a ; $i++){
+                $b=(int)10*mt_rand()/mt_getrandmax();
+                $arr9[$i]=(int)$b;
+            }
+            print_r($arr9);
+            $arr99=$arr9;
+            echo "<br>a)";
+            shuffle($arr9);
+            print_r($arr9);
+            while($j==0){
+                $arrr99=$arr99;
+                shuffle($arrr99);
+                for ($i=0; $i <=$a ; $i++){
+                    if ($arrr99[$i]==$arr99[$i]){
+                        $s++;
+                    }
+                }
+                if ($s==0){
+                    $j++;
+                }
+            }
+            echo "<br>б)";
+            print_r($arrr99);
 
-        echo "<H3>";
-        echo "Hello world!";
-        echo "</H3>";
-    ?>
+        ?>
 </body>
 </html>
