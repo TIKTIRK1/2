@@ -217,7 +217,7 @@
         ?>
         <br><br>
         <?PHP //9
-            $j=0;
+            /*$j=0;
             $s=0;
             echo "№9<br>";
             $a=(int)10*mt_rand()/mt_getrandmax();
@@ -242,7 +242,180 @@
                     $j++;
                 }
             }
+            echo "<br>б)";
+            print_r($arrr99);*/ 
+            //ДОЛГО ГРУЗИТ ИЗ-ЗА ДЕВЯТОГО ЗАДАНИЯ ВОЗМОЖНО ПРОБЛЕМА В ЦИКЛЕ WHILE
+        ?>
+        <br><br>
+        <?PHP //10
+            echo "№10<br>";
+            $a=(int)10*mt_rand()/mt_getrandmax();
+            for ($i=0; $i <=$a ; $i++){
+                $b=(int)10*mt_rand()/mt_getrandmax();
+                $arr10[$i]=(int)$b;
+            }
+            print_r($arr10);
+            echo "<br>";
+            $c=(int)10*mt_rand()/mt_getrandmax();
+            for ($i=0; $i <=$c ; $i++){
+                $d=(int)10*mt_rand()/mt_getrandmax();
+                $arr1010[$i]=(int)$d;
+            }
+            print_r($arr1010);
+            echo "<br>";
+            asort($arr10);
+            asort($arr1010);
+            $arr101010=array_merge($arr10,$arr1010);
+            asort($arr101010);
+            echo "<br>";
+            print_r($arr101010);
+        ?>
+        <br><br>
+        <?PHP //11
+            echo "№11<br>";
+            $a=(int)10*mt_rand()/mt_getrandmax();
+            for ($i=0; $i <=$a ; $i++){
+                $b=(int)-5+10*mt_rand()/mt_getrandmax();
+                $arr11[$i]=(int)$b;
+            }
+            print_r($arr11);
+            echo "<br>";
+            for ($i=0; $i <=$a ; $i++){
+                if($arr11[$i]< 0){
+                    $a++;
+                    array_splice($arr11,$i+1,0,0);
+                }
+            }
+            print_r($arr11);
+            echo "<br>";
+        ?>
+        <?PHP //12
+            echo "№12<br>";
+            $x=(int)(1000000*mt_rand()/mt_getrandmax());
+            $ans="";
+            $nul='ноль';
+	        $ed=array(
+		        array('','один','два','три','четыре','пять','шесть','семь', 'восемь','девять'),
+		        array('','одна','две','три','четыре','пять','шесть','семь', 'восемь','девять'),
+	        );
+            $ten=array('десять','одиннадцать','двенадцать','тринадцать','четырнадцать' ,'пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать');
+	        $tens=array(2=>'двадцать','тридцать','сорок','пятьдесят','шестьдесят','семьдесят' ,'восемьдесят','девяносто');
+	        $hundred=array('','сто','двести','триста','четыреста','пятьсот','шестьсот', 'семьсот','восемьсот','девятьсот');
+	        $at=array(
+		        array('тысяча'  ,'тысячи'  ,'тысяч'     ),
+		        array('миллион'),
+	        );
+            if($x==0){
+                echo $nul[0];
+            }
+            if($x==1000000){
+                echo $at[1][0];
+            }
+            //$x=987654;
+            echo $x;
+            $a=(int)($x/100000);
+            $b=(int)($x%100000/10000);
+            $c=(int)($x%10000/1000);
+            $d=(int)($x%1000/100);
+            $e=(int)($x%100/10);
+            $f=$x%10;
+            if($a>0){
+                $ans=$ans.$hundred[$a];
+                $ans=$ans." ";
+            }
+            if($b>=2){
+                $ans=$ans.$tens[$b];
+                $ans=$ans." ";
+                if($c>0){
+                    $ans=$ans.$ed[1][$c];
+                    $ans=$ans." ";
+                }
+                if($c==1){
+                    $ans=$ans.$at[0][0];
+                    $ans=$ans." ";
+                }
+                elseif($c>1 and $c< 4){
+                    $ans=$ans.$at[0][1];
+                    $ans=$ans." ";
+                }else{
+                    $ans=$ans.$at[0][2];
+                    $ans=$ans." ";
+                } 
+            }
+            if($b==0){
+                if($c==0){
+                    $ans=$ans.$ed[1][0];
+                    $ans=$ans." ";
+                }
+                if($c==1){
+                    $ans=$ans.$ed[1][1];
+                    $ans=$ans." ";
+                    $ans=$ans.$at[0][0];
+                    $ans=$ans." ";
+                }
+                elseif($c>1 and $c< 4){
+                    $ans=$ans.$ed[1][$c];
+                    $ans=$ans." ";
+                    $ans=$ans.$at[0][1];
+                    $ans=$ans." ";
+                }else{
+                    $ans=$ans.$ed[1][$c];
+                    $ans=$ans." ";
+                    $ans=$ans.$at[0][2];
+                    $ans=$ans." ";
+                } 
+            }
+            if($b==1){
+                $ans=$ans.$ten[$c];
+                $ans=$ans." ";
+                $ans=$ans.$at[0][2];
+                $ans=$ans." ";
+            }
 
+
+            if($d>0){
+                $ans=$ans.$hundred[$d];
+                $ans=$ans." ";
+            }
+            if($e>=2){
+                $ans=$ans.$tens[$e];
+                $ans=$ans." ";
+                if($f>0){
+                    $ans=$ans.$ed[0][$f];
+                    $ans=$ans." ";
+                }
+                if($f==1){;
+                    $ans=$ans." ";
+                }
+                elseif($f>1 and $f< 4){
+                    $ans=$ans." ";
+                }else{
+                    $ans=$ans." ";
+                } 
+            }
+            if($e==0){
+                if($f==0){
+                    $ans=$ans.$ed[0][0];
+                    $ans=$ans." ";
+                }
+                if($f==1){
+                    $ans=$ans.$ed[0][1];
+                    $ans=$ans." ";
+                }
+                elseif($f>1 and $f< 4){
+                    $ans=$ans.$ed[0][$f];
+                    $ans=$ans." ";
+                }else{
+                    $ans=$ans.$ed[0][$f];
+                    $ans=$ans." ";
+                } 
+            }
+            if($e==1){
+                $ans=$ans.$ten[$f];
+                $ans=$ans." ";
+            }
+            echo "<br>";
+            echo $ans;
         ?>
     </body>
 </html>
